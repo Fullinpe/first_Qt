@@ -8,5 +8,6 @@ int main(int argc, char *argv[]) {
     Widget w;
     w.show();
     cout<<"joighbk"<<endl;
+
     return QApplication::exec();
 }

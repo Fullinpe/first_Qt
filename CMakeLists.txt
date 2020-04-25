@@ -9,19 +9,15 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-find_package(Qt5Widgets)
-find_package(Qt5Core)
-find_package(Qt5Gui)
 
+find_package(Qt5 REQUIRED COMPONENTS Widgets Core Gui)
 set(UI_FILES)
-
 set(RC_FILES)
-
 set(QRC_FILES)
 
 #set(SOURCE_FILES main.cpp mainwindow.cpp mainwindow.h)
 
-add_executable(first_Qt main.cpp widget.cpp widget.h ${RC_FILES}${UI_FILES}${QRC_FILES})
+add_executable(first_Qt WIN32 main.cpp widget.cpp widget.h ${RC_FILES}${UI_FILES}${QRC_FILES})
 
 target_link_libraries(first_Qt Qt5::Widgets)
 

@@ -15,9 +15,15 @@ set(UI_FILES)
 set(RC_FILES)
 set(QRC_FILES)
 
-#set(SOURCE_FILES main.cpp mainwindow.cpp mainwindow.h)
+set(SOURCE_FILES main.cpp mainwindow.cpp mainwindow.h widget.ui)
 
-add_executable(first_Qt WIN32 main.cpp widget.cpp widget.h ${RC_FILES}${UI_FILES}${QRC_FILES})
+set(useWin32 TRUE)
+
+if (useWin32)
+    add_executable(first_Qt WIN32 main.cpp widget.cpp widget.h ${RC_FILES}${UI_FILES}${QRC_FILES})
+else ()
+    add_executable(first_Qt main.cpp widget.cpp widget.h ${RC_FILES}${UI_FILES}${QRC_FILES})
+endif ()
 
 target_link_libraries(first_Qt Qt5::Widgets)
 

@@ -7,19 +7,23 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
 QT_END_NAMESPACE
 
-class Widget : public QWidget
-{
-    Q_OBJECT
+class Widget : public QWidget {
+Q_OBJECT
 
 public:
     Widget(QWidget *parent = nullptr);
+
+
     ~Widget();
 
-public slots:
-    void mslot(void);
+signals:
+
+    void showimage(QPixmap pixmap);
+
 private:
     Ui::Widget *ui;
-public slots:
+
 
 };
+
 #endif // WIDGET_H

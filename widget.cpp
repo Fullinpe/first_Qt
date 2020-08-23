@@ -64,7 +64,6 @@ Widget::Widget(QWidget *parent)
     connect(ui->mbutton, &QPushButton::clicked, this, [=]() {
                 static int x = 0;
                 x++;
-                ui->progressBar->setValue(x);
 
             }
     );
